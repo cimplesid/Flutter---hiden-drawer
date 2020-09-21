@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hiddendrawer/drawer.dart';
+import 'package:hiddendrawer/page2.dart';
 
 class MainPage extends DrawerContent {
   MainPage({Key key, this.title});
@@ -87,7 +88,8 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
         ),
         DrawerItem(
           onPressed: () {
-            print('Pressed fav');
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (_) => Page2()));
           },
           text: Text(
             'Favorites',
