@@ -86,6 +86,9 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
           ),
         ),
         DrawerItem(
+          onPressed: () {
+            print('Pressed fav');
+          },
           text: Text(
             'Favorites',
             style: TextStyle(color: Colors.white),
@@ -138,20 +141,12 @@ class _MainWidgetState extends State<MainWidget> with TickerProviderStateMixin {
           alignment: Alignment.topLeft,
           child: Column(
             children: <Widget>[
-              Container(
-                // height: 75,
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.red, width: 5)),
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
-                width: MediaQuery.of(context).size.width * 0.6,
-                child: ClipOval(
-                  child: Image(
-                    fit: BoxFit.contain,
-                    image: NetworkImage(
-                      'https://scontent.fktm7-1.fna.fbcdn.net/v/t1.0-9/48405358_683680282028761_2233474687176802304_n.jpg?_nc_cat=111&_nc_oc=AQnJcz3nmJPgqG0Koen6EyPPOQktub5ubjD7KdFTstGLQRNrKupGp3hOZ-twJGEK2fM&_nc_ht=scontent.fktm7-1.fna&oh=caed7075e39bcdcd38b333395161516d&oe=5DD670D5',
-                    ),
-                  ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  radius: 100,
+                  backgroundImage: NetworkImage(
+                      'https://scontent.fktm7-1.fna.fbcdn.net/v/t1.0-9/82329578_945913889138731_3990029217893974016_o.jpg?_nc_cat=110&_nc_sid=09cbfe&_nc_ohc=-v-Gru-65UgAX8QfObI&_nc_ht=scontent.fktm7-1.fna&oh=97e3c3d49ca37a4fbe39ec7198967706&oe=5F8EEDB0'),
                 ),
               ),
               SizedBox(

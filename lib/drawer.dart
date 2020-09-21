@@ -20,10 +20,10 @@ class DrawerContent extends StatefulWidget {
 class DrawerItem extends StatelessWidget {
   DrawerItem({this.onPressed, this.icon, this.text, this.page});
   Function onPressed;
-  Widget icon;
-  Widget text;
+  final Widget icon;
+  final Widget text;
 
-  DrawerContent page;
+  final DrawerContent page;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class DrawerItem extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 2),
       child: Material(
         color: Colors.transparent,
-        child: InkWell(
+        child: GestureDetector(
           onTap: onPressed,
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 8.0),
